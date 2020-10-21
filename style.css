@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 10vh;
+    width: 100%;
+    background-color: greenyellow;
+    opacity: 0.5;
+}
+
+body {
+    width: 100%;
+    height: 90vh;
+}
+
+#content-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: slategray;
+}
+
+.content-window {
+    margin-top: 2.5%;
+    display: inline-block;
+    width: 47.5%;
+    height: 90%;
+}
+
+#media-wrapper {
+    margin-left: 2.5%;
+    float: left;
+    background-color: dodgerblue;
+}
+
+#description-wrapper {
+    background-color: forestgreen;
+    float: left;
+}
+
+#nav {
+display: inline-block;
+height: 100%;
+float: right;
+}
+
+.menu-button {
+    height: 50%;
+    display: inline-block;
+    background-color: slategray;
+    font-size: 30px;
+}
+
+#header-logo {
+    height: 100%;
+    background-color: red;
+}
