@@ -9,7 +9,7 @@
 <header>
     <img id="header-logo" src="content/images/mongooselogo.png" alt="">
     <ul id="nav">
-        <li class="menu-button"><a id="main-button">Главная</a></li>
+        <li class="menu-button"><a id="main">Главная</a></li>
         <li class="menu-button"><a id="workout">Занятия</a></li>
         <li class="menu-button"><a id="for-parents">Для родителей</a></li>
         <li class="menu-button"><a id="for-pupils">Для учеников</a></li>
@@ -17,12 +17,112 @@
 </header>
 
 <body>
+
 <script src="mangoose.js"></script>
+
 <div id="content-wrapper">
+
     <div class="content-window" id="media-wrapper">
-        <div id="media-main"></div>
+
+        <div  class="fade" id="media-main">
+            <video  id="promo-video" src="content/videos/IMG_0823.mp4" controls></video>
+        </div>
+
+        <div class="hidden" id="media-workout">
+            <div class="slideshow-container">
+
+                <!-- Полноразмерные изображения с числом и текстом подписи -->
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="content/images/slides/1.jpg" style="width:100%">
+                    <div class="text">Подпись текст</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="content/images/slides/2.jpg" style="width:100%">
+                    <div class="text">Подпись два</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="content/images/slides/3.jpg" style="width:100%">
+                    <div class="text">Подпись три</div>
+                </div>
+
+                <!-- Вперед и назад кнопки -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <!-- Точки/круги -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+            <script>
+                var slideIndex = 1;
+                showSlides(slideIndex);
+
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex-1].style.display = "block";
+                    dots[slideIndex-1].className += " active";
+                }
+            </script>
+
+        </div>
+
+        <div class="hidden" id="media-for-parents">c</div>
+
+        <div class="hidden" id="media-for-pupils">d</div>
     </div>
-    <div class="content-window" id="description-wrapper"></div>
+    <div class="content-window" id="description-wrapper">
+        <div id="description-main">
+            <h1>ЗАГОЛОВОК К ВИДЕО
+            </h1>
+            <p>Описание параграф к видео</p>
+        </div>
+        <div class="hidden" id="description-workout">
+         <!--   <h1>ЗАГОЛОВОК К ТРЕНИРОВКАМ</h1>
+        <h2>Старшая группа</h2>
+            <ul>
+                <li>вторник</li>
+                <li>четверг</li>
+                <li>суббота</li>
+            </ul>
+        <h2>Детская группа</h2>
+            <ul>
+                <li>понедельник</li>
+                <li>среда</li>
+                <li>пятница</li>
+            </ul>-->
+        </div>
+        <div class="hidden" id="description-for-parents">3</div>
+        <div class="hidden" id="description-for-pupils">4</div>
+    </div>
+
 </div>
 
 <script>
