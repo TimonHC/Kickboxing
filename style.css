@@ -1,3 +1,14 @@
+:root {
+    --color-1: #14223F;
+    --color-2: #344C72;
+    --color-3: #4D839E;
+    --color-4: #E7F0D8;
+    --color-5: #EED775;
+
+    --header-font: Roboto, sans-serif;
+    --basic-font: Trebuchet MS, serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +18,7 @@
 header {
     height: 10vh;
     width: 100%;
-    background-color: greenyellow;
-    opacity: 0.5;
+    background: linear-gradient(45deg, var(--color-1)30%, var(--color-4));
 }
 
 body {
@@ -17,11 +27,11 @@ body {
 }
 
 #content-wrapper {
-    background-image: url("content/images/mongooselogo.png");
+    background-image: url("content/images/logos/mongoose-logo.png");
     background-size: 15vh;
     width: 100%;
     height: 100%;
-    background-color: slategray;
+    background-color: var(--color-4);
 }
 
 .content-window {
@@ -29,41 +39,64 @@ body {
     display: inline-block;
     width: 47.5%;
     height: 90%;
+    box-shadow: 0 0 1vh 1vh rgba(20, 34, 63, 0.5); /* Параметры тени */
 }
 
 #media-wrapper {
-    vertical-align: center;
     margin-left: 2.5%;
     float: left;
-    background-color: dodgerblue;
-
+    background: linear-gradient(360deg, var(--color-1), transparent);
 }
 
 #description-wrapper {
-    background-color: forestgreen;
+    background-color: var(--color-4);
     float: left;
 }
 
+#description-main {
+    background-color: rgba(255, 255, 255, 0.11  );
+    padding-left: 1vh;
+    padding-top: 1vh;
+}
+
+#description-workout {
+    padding-left: 1vh;
+    padding-top: 1vh;
+}
+
+#description-contacts {
+    padding-left: 1vh;
+    padding-top: 1vh;
+}
+
 #nav {
-    display: inline-block;
-    height: 100%;
-    float: right;
+display: inline-block;
+height: 100%;
+float: right;
 }
 
 .menu-button {
-    height: 50%;
+    height: 100%;
     display: inline-block;
-    background-color: slategray;
     font-size: 30px;
+    font-family: "Roboto Light", sans-serif;
+
+    color: var(--color-4); /* цвет текста */
+    text-decoration: none; /* убирать подчёркивание у ссылок */
+    user-select: none; /* убирать выделение текста */
+    background: black; /* фон кнопки */
+    padding: .7em 1.5em; /* отступ от текста */
+    outline: none; /* убирать контур в Mozilla */
 }
 
-#header-logo {
-    height: 100%;
-    background-color: red;
-}
+.menu-button:hover { background: linear-gradient(-90deg, var(--color-1), transparent); } /* при наведении курсора мышки */
+.menu-button:active {
+    color: var(--color-1);
+    background: transparent } /* при нажатии */
 
 .hidden {
    display: none;
+    volume: 0;
 }
 
 #promo-video {
@@ -73,18 +106,104 @@ body {
 }
 
 #media-main {
+    overflow:hidden;
+    width: 100%;
+    height: 100%;
 }
 
 #media-workout {
     overflow: hidden;
+}
+
+#media-main {
     height: 100%;
     width: 100%;
+    background-color: red
 }
 
 
+#main-portrait {
+    margin-top: -6vh;
+}
 
+/*~~~~~> TEXT AREA <~~~~~*/
+p {
+    font-family: var(--basic-font);
+}
 
+h1 {
+    padding-top: 1vh;
+    text-align: center;
+    font-family: var(--header-font);
+}
 
+h2 {
+    padding-top: 2vh;
+    text-align: center;
+    font-family: var(--header-font);
+}
+
+h4 {
+    padding-top: 3vh;
+    font-size: 3vh;
+    text-align: center;
+    font-family: var(--header-font);
+}
+li {
+    font-family: var(--basic-font);
+}
+span {
+    font-family: var(--header-font);
+}
+
+#main-description-text {
+    font-size: 3vh;
+    margin-top: 5vh;
+}
+
+.workout-description-text {
+    padding-left: 3vh;
+    font-size: 3vh;
+    margin-top: 5vh;
+}
+
+.contacts-description-text {
+    text-align: center;
+    padding-left: 3vh;
+    font-size: 3vh;
+    margin-top: 5vh;
+}
+
+.blue-li {
+    color: var(--color-3);
+}
+
+.yellow-li {
+    color: var(--color-5);
+}
+
+.transparent-li {
+    color: transparent;
+}
+
+li span {
+    color: black;
+}
+
+.ref-logo {
+    margin-top: 2vh;
+    margin-left: 2vh;
+padding: inherit;
+width: 10%;
+display: inline-block;
+    align-items: center;
+}
+
+.ref-logo:hover {
+    box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+    border-radius: 100%;
+    transition: all ease 0.5s;
+}
 
 
 
@@ -108,29 +227,9 @@ body {
 
 /* Скрыть изображения по умолчанию */
 .mySlides {
-   display: none;
 }
-
-/* Вперед иназад кнопки */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-/* Положение "next кнопки" справа */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+.hidden {
+    display: none;
 }
 
 /* При наведении курсора добавьте черный цвет фона с немного прозрачным */
@@ -140,6 +239,7 @@ body {
 
 /* Подпись текст */
 .text {
+    float: top;
     color: #f2f2f2;
     font-size: 15px;
     padding: 8px 12px;
@@ -149,14 +249,6 @@ body {
     text-align: center;
 }
 
-/* Номер текста (1/3 и т.д.) */
-.numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-}
 
 /* Точки/пули/индикаторы */
 .dot {
