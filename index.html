@@ -32,7 +32,7 @@
 
                 <!-- Полноразмерные изображения с числом и текстом подписи -->
                 <div class="mySlides fade">
-                    <video  id="promo-video" src="content/videos/IMG_0823.mp4" controls></video>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/vQ7B5UORMas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="text">Атмосфера тренировочного процесса</div>
                 </div>
 
@@ -57,12 +57,12 @@
                 </div>
 
                 <div class="mySlides fade">
-                    <img src="content/images/slides/5.jpg" style="width:100%">
+                    <img src="content/images/slides/5.jpg" style="width:100%" alt="">
                     <div class="text">Спортзал - це кузня, де кується дух і тіло.</div>
                 </div>
 
                 <div class="mySlides fade">
-                    <img src="content/images/slides/6.jpg" style="width:100%">
+                    <img src="content/images/slides/6.jpg" style="width:100%" alt="">
                     <div class="text">Спортзал - це кузня, де кується дух і тіло.</div>
                 </div>
 
@@ -81,7 +81,7 @@
             </div>
 
             <script>
-                var slideIndex = 1;
+                let slideIndex = 1;
                 showSlides(slideIndex);
 
                 function plusSlides(n) {
@@ -93,9 +93,9 @@
                 }
 
                 function showSlides(n) {
-                    var i;
-                    var slides = document.getElementsByClassName("mySlides");
-                    var dots = document.getElementsByClassName("dot");
+                    let i;
+                    const slides = document.getElementsByClassName("mySlides");
+                    const dots = document.getElementsByClassName("dot");
                     if (n > slides.length) {slideIndex = 1}
                     if (n < 1) {slideIndex = slides.length}
                     for (i = 0; i < slides.length; i++) {
@@ -126,7 +126,7 @@
                 орієнтований на розвиток бійцівських якостей та спортивної дисципліни. <br/><br/>Тренер веде заняття в декількох группах:
                 на які поділяються учні по рівню підготовки та віку. Стартовий рівень, стать, вік - не мають значення. В нашому залі
                 є все необхідне для тренувань, при собі необхідно мати одяг для тренування та бажання бути сильним і здоровим.
-                <br/><br/><h4>Приходь і ставай сильнішим разом з нашою командою, <br> у клубі чемпіонів "Мангуст"!</h4></p>
+                <br/><br/><h4>Приходь і ставай сильнішим разом з нашою командою, <br> у клубі чемпіонів "Мангуст"!</h4>
             </section>
 
         </div>
@@ -166,7 +166,6 @@
                         <img class=ref-logo src="content/images/logos/insta-logo.png" alt="">
                     </a></li>
             </ul>
-                </p>
             </section>
 
         </div>
@@ -178,4 +177,4 @@
 <script>
     window.onload = main();
 </script>
-<html>
+<html lang="ukr">
